@@ -1,0 +1,37 @@
+<div id="bootstrap-theme">
+
+  <button ng-click="reset()">Reset</button>
+
+  <table>
+    <tbody>
+    <tr>
+      <th>value</th>
+      <td>{{filters.foo|json}}</td>
+    </tr>
+    <tr>
+      <th>select</th>
+      <td>
+        <select class="form-control" ng-model="filters.foo">
+          <option value="">{{ ts('Category: All') }}</option>
+          <option ng-repeat="(value, item) in ::activityCategories" value="{{ value }}" data-icon="{{ item.icon }}">
+            {{ item.label }}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>crm-ui-select</th>
+      <td>
+        <select  class="form-control" ng-model="filters.foo" crm-ui-select="">
+          <option value="">{{ ts('Category: All') }}</option>
+          <option ng-repeat="(value, item) in ::activityCategories" value="{{ value }}" data-icon="{{ item.icon }}">
+            {{ item.label }}
+          </option>
+        </select>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
